@@ -8,7 +8,7 @@ import { ConnectKitProvider, ConnectKitButton, getDefaultConfig } from "connectk
 import MyComponent from './myComponent';
 import { ApolloProvider } from '@apollo/client';
 import { useQuery, ApolloClient, InMemoryCache, gql } from '@apollo/client';
-import WalletData from './WalletData';
+
 
 
 const config = createConfig(
@@ -28,6 +28,7 @@ const config = createConfig(
 );
 
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <WagmiConfig config={config}>
@@ -36,10 +37,10 @@ root.render(
 
   <React.StrictMode>
     <App />
-    <WalletData/>
+    <ConnectKitButton />
   </React.StrictMode>
       
-    <ConnectKitButton />
+    
     <MyComponent/>
  
 
