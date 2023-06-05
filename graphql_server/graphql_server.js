@@ -21,7 +21,7 @@ const corsOptions = {
 };
 app.use(
   cors({
-    origin: "http://example.com", // use your actual domain name (or localhost), using * is not recommended
+    origin: "http://localhost:3000", // use your actual domain name (or localhost), using * is not recommended
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"],
     allowedHeaders: [
       "Content-Type",
@@ -37,7 +37,7 @@ app.use(
   })
 );
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:8000");
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
