@@ -1,15 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { Component } from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import { WagmiConfig, createConfig } from "wagmi";
-import { ConnectKitProvider, ConnectKitButton, getDefaultConfig } from "connectkit";
-import MyComponent from './myComponent';
-import { ApolloProvider } from '@apollo/client';
-import { useQuery, ApolloClient, InMemoryCache, gql } from '@apollo/client';
+import {
+  ConnectKitProvider,
+  ConnectKitButton,
+  getDefaultConfig,
+} from "connectkit";
+import MyComponent from "./myComponent";
+import { ApolloProvider } from "@apollo/client";
+import { useQuery, ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import { NextUIProvider, createTheme } from "@nextui-org/react";
 
 
+
+const darkTheme = createTheme({
+  type: "dark",
+});
 
 const config = createConfig(
   getDefaultConfig({
@@ -24,28 +33,22 @@ const config = createConfig(
     appDescription: "Your App Description",
     appUrl: "https://family.co", // your app's url
     appLogo: "https://family.co/logo.png", // your app's logo,no bigger than 1024x1024px (max. 1MB)
-  }),
+  })
 );
 
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <WagmiConfig config={config}>
-      <ConnectKitProvider>
-     
-
-  <React.StrictMode>
-    <App />
-    <ConnectKitButton />
-  </React.StrictMode>
-      
-    
-    <MyComponent/>
- 
-
-      </ConnectKitProvider>
-    </WagmiConfig>
+    <ConnectKitProvider>
+      <NextUIProvider theme={darkTheme}>
+        <React.StrictMode>
+          <ConnectKitButton />
+          <MyComponent />
+          <App />
+        </React.StrictMode>
+      </NextUIProvider>
+    </ConnectKitProvider>
+  </WagmiConfig>
 );
 
 // If you want to start measuring performance in your app, pass a function

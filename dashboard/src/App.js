@@ -1,5 +1,5 @@
 import logo from "./logo.svg";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
   InMemoryCache,
@@ -9,6 +9,7 @@ import {
 } from "@apollo/client";
 import { onError } from "@apollo/client/link/error";
 import GetUsers from "./Components/GetUsers";
+import Defiswap from "./Components/Defiswap";
 
 const errorLink = onError(({ graphqlErrors, networkError }) => {
   if (graphqlErrors) {
@@ -27,12 +28,23 @@ const client = new ApolloClient({
   link: link,
 });
 
-function App() {
+function Home() {
   return (
     <ApolloProvider client={client}>
-      {" "}
-      <GetUsers />
+     <GetUsers/>
+     
     </ApolloProvider>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/swap" element={<Defiswap/>}/>
+      </Routes>
+    </Router>
   );
 }
 

@@ -6,23 +6,30 @@
     "@apollo/client": "^3.7.15",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.10",
     "@graphql-tools/mock": "^9.0.0",
+    "@nextui-org/react": "^1.0.0-beta.13",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "add": "^2.0.6",
+    "alchemy-sdk": "^2.9.0",
     "apollo-server": "^3.12.0",
     "axios": "^1.4.0",
     "connectkit": "^1.4.0",
     "cors": "^2.8.5",
+    "ethers": "^6.4.2",
     "graphql": "^16.6.0",
     "graphql-tools": "^9.0.0",
     "or": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
+    "sf-font": "^1.0.0",
     "viem": "^0.3.50",
     "wagmi": "^1.1.0",
     "web-vitals": "^2.1.4",
+    "web3": "^1.10.0",
+    "web3modal": "^1.9.12",
     "yarn": "^1.22.19"
   },
   "scripts": {
@@ -48,5 +55,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/qs": "^6.9.7",
+    "@types/react": "^18.2.8"
   }
 }
