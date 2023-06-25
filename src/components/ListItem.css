@@ -1,0 +1,31 @@
+.list-item {
+      font-size: 76px;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-weight: bold;
+      font-style: italic;
+      cursor: pointer;
+      color: transparent;
+      -webkit-text-stroke: 1px #7ef06f;
+      position: relative;
+    }
+    
+    .list-item::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      color: #2fc06e79;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    
+    .list-item:hover::after {
+      animation: moveText 0.8s linear both;
+    }
+    
+    @keyframes moveText {
+      to {
+        width: 100%;
+      }
+    }
